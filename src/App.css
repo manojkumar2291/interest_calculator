@@ -1,0 +1,201 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+    color: #333;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Container Styles */
+  .container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s;
+  }
+  
+  .container:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Form Element Styles */
+  label {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  input[type="number"],
+  input[type="text"] {
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  input[type="number"]:focus,
+  input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    outline: none;
+  }
+  
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  button {
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  button:active {
+    background-color: #003f7f;
+  }
+  
+  /* Result Display Styles */
+  .result {
+    font-size: 18px;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .result strong {
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  /* Media Queries */
+  
+  /* Mobile Devices (up to 480px) */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    .container {
+      padding: 20px;
+      max-width: 100%;
+    }
+  
+    label {
+      font-size: 14px;
+    }
+  
+    input[type="number"],
+    input[type="text"] {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    button {
+      font-size: 16px;
+      padding: 10px;
+    }
+  
+    .result {
+      font-size: 16px;
+      padding: 10px;
+    }
+  }
+  
+  /* Tablets (481px to 768px) */
+  @media (min-width: 481px) and (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+  
+    .container {
+      padding: 25px;
+      max-width: 90%;
+    }
+  
+    label {
+      font-size: 15px;
+    }
+  
+    input[type="number"],
+    input[type="text"] {
+      font-size: 15px;
+      padding: 9px;
+    }
+  
+    button {
+      font-size: 17px;
+      padding: 11px;
+    }
+  
+    .result {
+      font-size: 17px;
+      padding: 12px;
+    }
+  }
+  
+  /* Desktop (769px and up) */
+  @media (min-width: 769px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  
+    .container {
+      padding: 25px;
+      max-width: 400px;
+    }
+  
+    label {
+      font-size: 16px;
+    }
+  
+    input[type="number"],
+    input[type="text"] {
+      font-size: 16px;
+      padding: 10px;
+    }
+  
+    button {
+      font-size: 18px;
+      padding: 12px;
+    }
+  
+    .result {
+      font-size: 18px;
+      padding: 15px;
+    }
+  }
+  
