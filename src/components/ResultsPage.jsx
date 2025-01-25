@@ -3,7 +3,7 @@ import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 
 function ResultsPage({ results, onReset }) {
-  const { totalYears, totalMonths, remainingDays, breakdown, startDate, endDate,  principle, rate } = results;
+  const { totalYears, totalMonths, remainingDays, breakdown, startDate, endDate, principal, rate } = results;
 
   const handleDownloadPDF = () => {
     const doc = new jsPDF();
@@ -30,16 +30,26 @@ function ResultsPage({ results, onReset }) {
       startY: 80,
     });
 
-    doc.save('Interest_Calculation_Breakdown.pdf');
+    if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android)/)) {
+      const pdfOutput = doc.output('blob');
+      const url = URL.createObjectURL(pdfOutput);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'Interest_Calculation_Breakdown.pdf';
+      link.click();
+      URL.revokeObjectURL(url);
+    } else {
+      doc.save('Interest_Calculation_Breakdown.pdf');
+    }
   };
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 max-w-4xl w-full">
-      <h1 className="text-2xl font-bold mb-4">Calculation Results</h1>
+    <div className="bg-white shadow-lg rounded-lg p-6 sm:p-8 max-w-4xl w-full">
+      <h1 className="text-2xl sm:text-3xl font-bold text-blue-600 mb-4">Calculation Results</h1>
       <div className="mb-6">
         <p><strong>Start Date:</strong> {startDate}</p>
         <p><strong>End Date:</strong> {endDate}</p>
-        <p><strong>Principal Amount:</strong> ₹{ principle}</p>
+        <p><strong>Principal Amount:</strong> ₹{principal}</p>
         <p><strong>Rate of Interest:</strong> {rate}%</p>
         <p><strong>Total Years:</strong> {totalYears}</p>
         <p><strong>Total Months:</strong> {totalMonths}</p>
@@ -47,7 +57,7 @@ function ResultsPage({ results, onReset }) {
       </div>
       <table className="w-full border-collapse border border-gray-300">
         <thead>
-          <tr className="bg-gray-200">
+          <tr className="bg-blue-200">
             <th className="border border-gray-300 p-2">#</th>
             <th className="border border-gray-300 p-2">Type</th>
             <th className="border border-gray-300 p-2">Period</th>
@@ -57,7 +67,7 @@ function ResultsPage({ results, onReset }) {
         </thead>
         <tbody>
           {breakdown.map((item, index) => (
-            <tr key={index}>
+            <tr key={index} className={index % 2 === 0 ? 'bg-gray-100' : 'bg-white'}>
               <td className="border border-gray-300 p-2 text-center">{index + 1}</td>
               <td className="border border-gray-300 p-2 text-center">{item.type}</td>
               <td className="border border-gray-300 p-2 text-center">{item.period}</td>
@@ -67,16 +77,16 @@ function ResultsPage({ results, onReset }) {
           ))}
         </tbody>
       </table>
-      <div className="mt-6 flex justify-between">
+      <div className="mt-6 flex justify-between flex-col sm:flex-row gap-4">
         <button
           onClick={onReset}
-          className="bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700"
+          className="bg-red-600 text-white py-2 px-4 rounded-md hover:bg-red-700 transition-all"
         >
           Reset
         </button>
         <button
           onClick={handleDownloadPDF}
-          className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700"
+          className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-all"
         >
           Download PDF
         </button>
