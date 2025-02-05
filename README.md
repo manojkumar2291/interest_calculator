@@ -49,7 +49,8 @@ The app will run at http://localhost:5173
 
 ## 📸 Screenshots
 
-![Alt text](Interest_Calculator.jpg?raw=true "Title")
+![Alt text](Interest_calculator.jpg?raw=true "Title")
+![Alt text](Interest_result.jpg?raw=true "Title")
 
 
 
