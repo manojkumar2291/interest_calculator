@@ -48,8 +48,8 @@ npm run dev
 The app will run at http://localhost:5173
 
 📸 Screenshots
-![Interest Calculator.jpg]
-![Result Page](screenshots/result.png)  
+![interest_calculator/Interest Calculator.jpg]
+![interest_calculator/Interest_result.jpg] 
 
 🌐 Live Demo
 🔗 Live Application: [https://interest-calculator-ecru.vercel.app/]
