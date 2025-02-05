@@ -48,7 +48,7 @@ npm run dev
 The app will run at http://localhost:5173
 
 📸 Screenshots
-![Home Page](  )  
+![Interest Calculator.jpg]
 ![Result Page](screenshots/result.png)  
 
 🌐 Live Demo
