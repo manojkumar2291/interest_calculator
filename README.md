@@ -60,10 +60,15 @@ The app will run at http://localhost:5173
 🔗 GitHub Repository: [https://github.com/manojkumar2291/interest-calculator]
 
 🛠️ How It Works
+
 1️⃣ Enter Principal Amount, Rate of Interest, and Time Duration.
+
 2️⃣ Choose Between Simple & Compound Interest.
+
 3️⃣ Get a Breakdown of Interest Calculations for Each Year, Month & Day.
+
 4️⃣ Download the Calculation as a PDF for Records.
+
 
 🧑‍💻 Contributing
 Pull requests are welcome! If you have ideas for improvement, feel free to fork the repository and submit changes.
